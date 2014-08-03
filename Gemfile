@@ -40,3 +40,4 @@ gem "mongoid"
 gem "instagram"
 gem "rest-client"
 gem 'pry'
+gem 'tzinfo-data'

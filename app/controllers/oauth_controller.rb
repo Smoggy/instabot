@@ -5,10 +5,10 @@ class OauthController < ApplicationController
   end
 
   def callback
-  	binding.pry
-  	response = Instagram.get_access_token(params[:code], :redirect_uri => CALLBACK_URL)
+    response = InstagramService.get_access_token params[:code]
+  	#response = Instagram.get_access_token(params[:code], :redirect_uri => CALLBACK_URL)
 
-  	session[:access_token] = response.access_token
+  	session[:access_token] = response["access_token"]      
   	redirect_to main_index_path
   end
 end
